@@ -19,7 +19,7 @@ extension Web3DartExt on Web3Client {
     /// todo: check approved
 
     EthereumAddress receiver = EthereumAddress.fromHex(receiverAddress);
-    EtherAmount amount = EtherAmount.fromUnitAndValue(EtherUnit.wei, BigInt.from(amountInWei));
+    EtherAmount amount = EtherAmount.fromUnitAndValue(EtherUnit.wei, amountInWei);
 
     ///
     String txHash = await _sendTransactionAndWaitForReceipt(
