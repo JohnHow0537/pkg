@@ -165,9 +165,8 @@ class EthWallet {
         txID = await sdkWeb3.tokenTransfer(contractAddress, toAddress, amount, privateKey);
         logger.i('do wallet token transfer done: $contractAddress, $toAddress, amount:$amount, $txID');
       } else {
-        var amountInWei = toWei(fromEther: amount as double).toInt();
-
-        if (amountInWei <= 0) {
+        var amountInWei = toWei(fromEther: amount as double);
+        if (amountInWei.toInt() <= 0) {
           logger.e('invalid amount, skip transfer,  input amount:$amount, wei:$amountInWei ');
           return '';
         }

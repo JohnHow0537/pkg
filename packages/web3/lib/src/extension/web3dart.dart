@@ -13,7 +13,7 @@ extension Web3DartExt on Web3Client {
     return sendRawTransaction(signed);
   }
 
-  Future<String> transfer(String receiverAddress, int amountInWei, String privateKey) async {
+  Future<String> transfer(String receiverAddress, BigInt amountInWei, String privateKey) async {
     print('transfer start --> receiver: $receiverAddress, amountInWei: $amountInWei');
 
     /// todo: check approved
